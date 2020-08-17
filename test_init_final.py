@@ -751,7 +751,7 @@ class taskCog(commands.Cog):
 						continue
 					continue
 				t.cancel()
-		await ctx.send( '< 보탐봇 명치 맞고 숨 고르기 중! 잠시만요! >', tts=False)
+		await ctx.send( '< 오빠 나 명치 맞았어 잠시만..ㅠㅠ >', tts=False)
 		print("명치!")
 		await dbSave()
 		await data_list_Save("kill_list.ini", "-----척살명단-----", kill_Data)
@@ -811,7 +811,7 @@ class taskCog(commands.Cog):
 				voice_client1 = await self.bot.get_channel(basicSetting[6]).connect(reconnect=True)
 				if voice_client1.is_connected() :
 					await dbLoad()
-					await self.bot.get_channel(channel).send( '< 다시 왔습니다! >', tts=False)
+					await self.bot.get_channel(channel).send( '< 오빠! 나 다시왔어! >', tts=False)
 					print("명치복구완료!")
 
 		while not self.bot.is_closed():
@@ -971,7 +971,7 @@ class taskCog(commands.Cog):
 										tmp_bossTime[i] = bossTime[i] = nextTime = tmp_bossTime[i]+datetime.timedelta(hours=int(bossData[i][1]), minutes=int(bossData[i][5]))
 										tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 										tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
-										await self.bot.get_channel(channel).send("```" +  bossData[i][0] + ' 미입력 됐습니다.```', tts=False)
+										await self.bot.get_channel(channel).send("```" +  bossData[i][0] + ' 미입력이양 오빵.```', tts=False)
 										embed = discord.Embed(
 											description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
 											color=0xff0000
@@ -987,9 +987,9 @@ class taskCog(commands.Cog):
 										tmp_bossTime[i] = bossTime[i] = nextTime = tmp_bossTime[i]+datetime.timedelta(hours=int(bossData[i][1]), minutes=int(bossData[i][5]))
 										tmp_bossTimeString[i] = bossTimeString[i] = nextTime.strftime('%H:%M:%S')
 										tmp_bossDateString[i] = bossDateString[i] = nextTime.strftime('%Y-%m-%d')
-										await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' 멍 입니다.```')
+										await self.bot.get_channel(channel).send("```" + bossData[i][0] + ' 멍 이양 오빵.```')
 										embed = discord.Embed(
-											description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '입니다.```',
+											description= '```다음 ' + bossData[i][0] + ' ' + bossTimeString[i] + '이양 .```',
 											color=0xff0000
 											)
 										await self.bot.get_channel(channel).send(embed=embed, tts=False)
